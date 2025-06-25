@@ -1,0 +1,227 @@
+<>
+    html
+
+
+    <!DOCTYPE html>
+    <html lang="fr">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Portfolio de [Ton Prénom Nom]</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
+        <style>
+            body {
+                font-family: 'Montserrat', Arial, sans-serif;
+                background: #f1f2f7;
+                color: #21243d;
+                margin: 0;
+                padding: 0;
+            }
+
+            header {
+                background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+                color: #fff;
+                padding: 36px 0 24px 0;
+                text-align: center;
+            }
+
+            .container {
+                max-width: 900px;
+                margin: 40px auto;
+                background: #fff;
+                border-radius: 12px;
+                box-shadow: 0 6px 32px 0 rgba(50, 50, 93, 0.06), 0 1.5px 10px 0 rgba(0, 0, 0, 0.09);
+                padding: 40px 32px 32px 32px;
+            }
+
+            h1,
+            h2 {
+                font-weight: 700;
+                letter-spacing: -0.5px;
+            }
+
+            .intro {
+                font-size: 1.17em;
+                margin-bottom: 30px;
+                color: #444;
+            }
+
+            .project {
+                display: flex;
+                flex-wrap: wrap;
+                background: #f5f7fa;
+                border-radius: 8px;
+                margin-bottom: 32px;
+                box-shadow: 0 1px 8px rgba(102, 126, 234, 0.07);
+            }
+
+            .preview {
+                flex: 1 1 250px;
+                min-width: 250px;
+                max-width: 350px;
+                padding: 28px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: #edf2fa;
+                border-radius: 8px 0 0 8px;
+            }
+
+            .preview iframe {
+                width: 230px;
+                height: 170px;
+                border: none;
+                border-radius: 8px;
+                box-shadow: 0 2px 15px rgba(102, 126, 234, 0.1);
+                background: #fff;
+            }
+
+            .desc {
+                flex: 2 1 350px;
+                padding: 24px 32px;
+            }
+
+            .project h3 {
+                margin-top: 0;
+            }
+
+            .desc a.btn {
+                display: inline-block;
+                margin-top: 8px;
+                background: #667eea;
+                color: #fff;
+                font-weight: 600;
+                text-decoration: none;
+                padding: 8px 20px;
+                border-radius: 6px;
+                transition: background .2s;
+            }
+
+            .desc a.btn:hover {
+                background: #5a62c2;
+            }
+
+            @media (max-width: 700px) {
+                .container {
+                    padding: 12px;
+                }
+
+                .project {
+                    flex-direction: column;
+                }
+
+                .preview {
+                    border-radius: 8px 8px 0 0;
+                    padding: 18px;
+                }
+
+                .desc {
+                    padding: 20px;
+                }
+            }
+
+            footer {
+                text-align: center;
+                margin: 35px 0 10px 0;
+                color: #bbb;
+                font-size: 0.9em;
+            }
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <h1>Portfolio de [Ton Prénom Nom]</h1>
+            <p>Développeur web créatif & polyvalent</p>
+        </header>
+
+        <div class="container">
+            <p class="intro">
+                Bienvenue sur mon portfolio. Je vous propose ici quelques projets récents, mêlant expérience
+                utilisateur, outils pratiques et créativité web. Mes créations sont fonctionnelles, modernes, et pensées
+                pour aider concrètement les utilisateurs.
+            </p>
+
+            <!-- Projet 1 -->
+            <section class="project">
+                <div class="preview">
+                    <!-- Aperçu via iframe (remplacer le src pour démo locale/online) -->
+                    <iframe srcdoc="
+                    <!DOCTYPE html>
+                    <html><head><style>body{margin:0;font-family:sans-serif;background:#f5f7fa}h1{font-size:0.5em;text-align:center;margin-top:18px;}p{text-align:center;color:#666;}hr{margin:10px auto;width:35%;}
+                    .cat{display:flex;justify-content:center;gap:12px;margin-top:12px;}
+                    .cat div{font-size:1.15em;border-radius:6px;background:#e9ecfc;padding:5px 13px;}
+                    </style></head>
+                    <body>
+                    <h1>🏛️ Administration France</h1>
+                    <p style='font-size:.98em'>Votre portail unique vers tous les services publics français</p>
+                    <hr>
+                    <div class='cat'><div>🆔 Identité</div><div>💼 Emploi</div><div>🏥 Santé</div></div>
+                    </body></html>
+                "></iframe>
+                </div>
+                <div class="desc">
+                    <h3>Administration France - Portail Unique</h3>
+                    <p>
+                        Un site regroupant les <strong>services publics français</strong> (identité, emploi, santé,
+                        impôts, logement, etc).<br>
+                        Il propose :
+                    <ul>
+                        <li>Un <b>moteur de recherche thématique</b> rapide par mots-clés</li>
+                        <li>Des <b>catégories claires</b> et accessibles</li>
+                        <li>Différents liens utiles et une navigation simplifiée</li>
+                    </ul>
+                    Idéal pour faciliter vos démarches administratives en un clic !
+                    </p>
+                    <a href="Administration.html" class="btn" target="_blank">Voir le projet</a>
+                </div>
+            </section>
+
+            <!-- Projet 2 -->
+            <section class="project">
+                <div class="preview">
+                    <!-- Vue simplifiée du background animé -->
+                    <iframe srcdoc="
+                   <!DOCTYPE html>
+                   <html>
+                   <head><style>
+                   body{margin:0;background:#a8dadc}
+                   ul.background{position:relative;list-style:none;padding:0;margin:0;height:100vh;}
+                   ul.background li{position:absolute;width:30px;height:30px;background:#457b9d;border-radius:50%;opacity:.2; animation: float 7s infinite ease-in-out;}
+                   ul.background li:nth-child(1){left:10%;top:30%;animation-delay:0s;}
+                   ul.background li:nth-child(2){left:40%;top:70%;animation-delay:1s;}
+                   ul.background li:nth-child(3){left:80%;top:50%;animation-delay:2s;}
+                   ul.background li:nth-child(4){left:60%;top:15%;animation-delay:3s;}
+                   ul.background li:nth-child(5){left:25%;top:80%;animation-delay:4s;}
+                   ul.background li:nth-child(6){left:70%;top:80%;animation-delay:5s;}
+                   ul.background li:nth-child(7){left:55%;top:45%;animation-delay:6s;}
+                   @keyframes float {
+                        0%{transform:translateY(0);}
+                       50%{transform:translateY(-40px);}
+                       100%{transform:translateY(0);}
+                   }
+                   </style></head>
+                   <body><ul class='background'>
+                   <li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+                   </ul></body></html>
+                "></iframe>
+                </div>
+                <div class="desc">
+                    <h3>Background animé ("Bubbles")</h3>
+                    <p>
+                        Un effet de <strong>background animé</strong> en HTML/CSS, pour sites modernes.<br>
+                        Agrémente vos interfaces web avec des <b>bulles animées</b> : léger, responsive et
+                        personnalisable.<br />
+                        Le code source est extrêmement simple à intégrer !
+                    </p>
+                    <a href="background.html " class="btn" target="_blank">Voir l’exemple</a>
+                </div>
+            </section>
+        </div>
+        <footer>
+            © [Ton Prénom] [Ton Nom] – 2024 • Portfolio réalisé par moi
+        </footer>
+    </body>
+
+    </html>
