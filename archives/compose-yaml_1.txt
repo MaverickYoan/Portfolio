@@ -1,0 +1,57 @@
+
+services:
+    
+  ###> doctrine/doctrine-bundle ###
+  database:
+    image: postgres:${POSTGRES_VERSION:-16}-alpine
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-app}
+      # You should definitely change the password in production
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-!ChangeMe!}
+      POSTGRES_USER: ${POSTGRES_USER:-app}
+    healthcheck:
+      test: ["CMD", "pg_isready", "-d", "${POSTGRES_DB:-app}", "-U", "${POSTGRES_USER:-app}"]
+      timeout: 5s
+      retries: 5
+      start_period: 60s
+    volumes:
+      - database_data:/var/lib/postgresql/data:rw
+      # You may use a bind-mounted host directory instead, so that it is harder to accidentally remove the volume and lose all your data!
+      # - ./docker/db/data:/var/lib/postgresql/data:rw
+  ###< doctrine/doctrine-bundle ###
+
+  db:
+    image: postgres:15
+    container_name: crud_db
+    environment:
+      POSTGRES_PASSWORD: test
+      POSTGRES_USER: test
+      POSTGRES_DB: catalogue
+      # Variables pour résoudre les problèmes d'initialisation
+      PGUSER: test
+      POSTGRES_HOST_AUTH_METHOD: trust
+    volumes:
+      - ./data:/docker-entrypoint-initdb.d # création de la table et insertion des données à partir du fichier users_postgres.sql
+    ports:
+      - '5432:5432' #  incrémenter si le port est déjà utilisé par un autre projet
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: crud_pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+      # Simplification de la configuration - pas de fichiers externes
+      PGADMIN_CONFIG_SERVER_MODE: 'False'
+      PGADMIN_CONFIG_MASTER_PASSWORD_REQUIRED: 'False'
+    ports:
+      - '8082:80' # on définit le port pour accéder à pgadmin (localhost:8080) - incrémenter si le port est déjà utilisé par un autre projet
+    volumes:
+      - ./data/servers.json:/pgadmin4/servers.json
+    depends_on:
+      - db
+
+volumes:
+  ###> doctrine/doctrine-bundle ###
+  database_data:
+  ###< doctrine/doctrine-bundle ###
