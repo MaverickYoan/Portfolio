@@ -29,6 +29,7 @@ body {
     align-items: center;
     background-color: #000000;
     padding: 10px 20px;
+    right: 0;
 }
 
 .nav-links {
@@ -67,6 +68,8 @@ body {
         display: none;
         flex-direction: column;
         width: 100%;
+        right: 0;
+
     }
 
     .nav-links li {
@@ -201,11 +204,11 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: 25%;
 }
-/* * animation plane */
+
+/* * animation oiseau */
 .home {
-    background: url(/images/sky.jpg);
+    background: url(img/sky.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     overflow: hidden;
@@ -223,7 +226,7 @@ body {
     width: 100px;
 }
 
-/* trajectoire de l'avion */
+/* trajectoire de l'oiseau */
 @keyframes sky {
     from {
         top: 300px;
