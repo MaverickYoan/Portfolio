@@ -17,7 +17,7 @@
 body {
     width: 100%;
     color: white;
-    font-family: Arial, sans-serif;
+    font-family: 'Montserrat', sans-serif;
     background-color: black;
     /* background-color: white; */
 }
@@ -44,7 +44,7 @@ body {
 }
 
 .nav-links a {
-    color: white;
+    color: rgb(29, 255, 9);
     text-decoration: none;
     padding: 5px 10px;
 }
@@ -330,7 +330,38 @@ body {
 
 
 .navbar,
-.nav-links {
+.nav-links, h1, h2, p {
     mix-blend-mode: difference;
+    font-weight: bolder;
+    font-size: x-large;
+}
+
+/* * - FADE IN */
+h1, h2, p {
+    -webkit-animation: fadein 10s;
+    animation: fadein 10s;
+    /* Safari et Chrome */
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadein {
+
+    /* sur Safari et Chrome */
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
