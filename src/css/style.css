@@ -327,3 +327,10 @@ body {
         scroll-behavior: smooth;
     }
 }
+
+
+.navbar,
+.nav-links {
+    mix-blend-mode: difference;
+}
+
