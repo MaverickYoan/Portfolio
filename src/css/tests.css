@@ -120,7 +120,7 @@
             position: absolute;
             width: 100%;
             height: 1px;
-            background: var(--neon-blue);
+            background: var(--neon-green);
             box-shadow: 0 0 8px 1px var(--neon-blue);
             opacity: 0;
             animation: laserScan 10s linear infinite;
